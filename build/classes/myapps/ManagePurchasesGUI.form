@@ -271,7 +271,7 @@
                     <Column editable="false" title="Block Number" type="java.lang.Object"/>
                     <Column editable="false" title="Lot Number" type="java.lang.Object"/>
                     <Column editable="false" title="Name" type="java.lang.Object"/>
-                    <Column editable="true" title="Username" type="java.lang.Object"/>
+                    <Column editable="false" title="Username" type="java.lang.Object"/>
                     <Column editable="false" title="Contact Number" type="java.lang.Object"/>
                     <Column editable="false" title="Email" type="java.lang.Object"/>
                     <Column editable="false" title="Payment Method" type="java.lang.Object"/>

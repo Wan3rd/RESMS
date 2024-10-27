@@ -27,7 +27,6 @@ public class InvoiceUI extends javax.swing.JFrame {
         initComponents();
         this.username = username;
         lots = new ArrayList<>();
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE); 
         setLocationRelativeTo(null); // Center the form on the screen
         pack(); // Pack the components to their preferred sizes
         displayInvoices();

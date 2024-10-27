@@ -5,6 +5,9 @@
 package myapps;
 
 import java.awt.Color;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -274,8 +277,9 @@ public class Payment extends javax.swing.JFrame {
         jPanel1.add(creditcardradio);
         creditcardradio.setBounds(390, 420, 20, 25);
 
-        purchaseButton.setBackground(new java.awt.Color(153, 153, 153));
+        purchaseButton.setBackground(new java.awt.Color(0, 0, 0));
         purchaseButton.setFont(new java.awt.Font("Perpetua", 1, 24)); // NOI18N
+        purchaseButton.setForeground(new java.awt.Color(255, 255, 255));
         purchaseButton.setText("Purchase");
         purchaseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -326,6 +330,14 @@ public class Payment extends javax.swing.JFrame {
         jPanel1.add(jLabel20);
         jLabel20.setBounds(380, 370, 170, 28);
 
+        cardnumberfield.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cardnumberfieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cardnumberfieldFocusLost(evt);
+            }
+        });
         cardnumberfield.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cardnumberfieldActionPerformed(evt);
@@ -339,6 +351,14 @@ public class Payment extends javax.swing.JFrame {
         jPanel1.add(cvvtext);
         cvvtext.setBounds(980, 380, 60, 21);
 
+        expiryfield.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                expiryfieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                expiryfieldFocusLost(evt);
+            }
+        });
         expiryfield.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 expiryfieldActionPerformed(evt);
@@ -386,6 +406,20 @@ public class Payment extends javax.swing.JFrame {
         cvvfield.setVisible(true);
         expiryfield.setVisible(true);
         purchaseButton.setEnabled(true);
+        if (cardnumberfield.getText().equals("")) {
+        cardnumberfield.setText("Card Number");
+        cardnumberfield.setForeground(new Color(153, 153, 153)); // Grey color for placeholder
+        }
+
+        if (cvvfield.getText().equals("")) {
+            cvvfield.setText("CVV");
+            cvvfield.setForeground(new Color(153, 153, 153)); // Grey color for placeholder
+        }
+
+        if (expiryfield.getText().equals("")) {
+            expiryfield.setText("MM/YY");
+            expiryfield.setForeground(new Color(153, 153, 153)); // Grey color for placeholder
+        }
     }//GEN-LAST:event_creditcardradioMouseClicked
 
     private void cashradioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cashradioMouseClicked
@@ -412,16 +446,101 @@ public class Payment extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(cvvfield.getText().equals("CVV")){
             cvvfield.setText("");
-            cvvfield.setForeground(new Color(153,153,153));
+            cvvfield.setForeground(new Color(0,0,0));
         }
     }//GEN-LAST:event_cvvfieldFocusGained
+
+    private void cardnumberfieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardnumberfieldFocusLost
+        // TODO add your handling code here:
+        if (cardnumberfield.getText().equals("")) {
+        cardnumberfield.setText("Card Number"); // Set placeholder text
+        cardnumberfield.setForeground(new Color(153, 153, 153)); // Grey color for placeholder
+        }
+    }//GEN-LAST:event_cardnumberfieldFocusLost
+
+    private void cardnumberfieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cardnumberfieldFocusGained
+        // TODO add your handling code here:
+        if (cardnumberfield.getText().equals("Card Number")) {
+            cardnumberfield.setText("");
+            cardnumberfield.setForeground(new Color(0, 0, 0)); // Black color for input
+        }
+    }//GEN-LAST:event_cardnumberfieldFocusGained
+
+    private void expiryfieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_expiryfieldFocusLost
+        // TODO add your handling code here:
+        if (expiryfield.getText().equals("")) {
+            expiryfield.setText("MM/YY"); // Set placeholder text
+            expiryfield.setForeground(new Color(153, 153, 153)); // Grey color for placeholder
+        }
+    }//GEN-LAST:event_expiryfieldFocusLost
+
+
+    private void expiryfieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_expiryfieldFocusGained
+        // TODO add your handling code here:
+        if (expiryfield.getText().equals("MM/YY")) {
+            expiryfield.setText("");
+            expiryfield.setForeground(new Color(0, 0, 0)); // Black color for input
+        }
+    }//GEN-LAST:event_expiryfieldFocusGained
+
+
+    private boolean isValidCardNumber(String cardNumber) {
+        // Check if card number has exactly 16 digits
+        if (!cardNumber.matches("\\d{16}")) {
+            return false;
+        }
+
+        return luhnCheck(cardNumber);
+    }
+
+    
+
+    // Implementing the Luhn Algorithm to validate card numbers
+    private boolean luhnCheck(String cardNumber) {
+        int sum = 0;
+        boolean alternate = false;
+
+        // Start from the last digit and move backwards
+        for (int i = cardNumber.length() - 1; i >= 0; i--) {
+            int n = Integer.parseInt(cardNumber.substring(i, i + 1));
+
+            if (alternate) {
+                n *= 2;
+                if (n > 9) {    
+                    n = (n % 10) + 1;
+                }
+            }
+            sum += n;
+            alternate = !alternate;
+        }
+        // Valid if the sum is a multiple of 10
+        return (sum % 10 == 0);
+    }
+    
+    // Is the card valid
+    private boolean isValidCardInfo(String cardNumber, String cvv) {
+    // Check if the card number is 16 digits
+        if (!isValidCardNumber(cardNumber)) {
+            System.out.println("Invalid card number.");
+            return false;
+        }
+
+        // Check if CVV is exactly 3 digits
+        if (!cvv.matches("\\d{3}")) {
+            System.out.println("Invalid CVV.");
+            return false;
+        }
+
+
+        return true;
+    }
 
     private void purchaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purchaseButtonActionPerformed
         // TODO add your handling code here:
         try
         {
             String paymentMethod = "";
-            String cardNumber = cardnumberfield.getText().trim();
+            String cardNumber = cardnumberfield.getText();
             String cvv = cvvfield.getText().trim();
             String expiry = expiryfield.getText().trim();
             if(creditcardradio.isSelected())
@@ -431,6 +550,12 @@ public class Payment extends javax.swing.JFrame {
                 {
                     JOptionPane.showMessageDialog(this, "All fields must be filled out.", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;  // Stop further processing if any field is empty
+                }
+                
+                // CVV and expiry validation (if implemented separately)
+                if (!isValidCardInfo(cardNumber, cvv)) {
+                    JOptionPane.showMessageDialog(this, "Invalid card details. Please check and try again.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
                 }
             }
             else if(cashradio.isSelected())
@@ -511,6 +636,8 @@ public class Payment extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_purchaseButtonActionPerformed
+
+    
 
     private void hideCardDetailsField()
     {

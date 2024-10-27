@@ -70,8 +70,9 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         showpayment = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        showmessage = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        showmessage = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         marksoldbtn = new javax.swing.JButton();
         backtopendingbtn = new javax.swing.JButton();
@@ -221,11 +222,14 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel18.setText("Message:");
 
-        showmessage.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        showmessage.setText("<<message>>");
-
         jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel14.setText("Status:");
+
+        showmessage.setEditable(false);
+        showmessage.setColumns(20);
+        showmessage.setLineWrap(true);
+        showmessage.setRows(5);
+        jScrollPane1.setViewportView(showmessage);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -233,6 +237,11 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel13))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,34 +251,32 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(showstatus)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(showid)
-                                    .addComponent(showpayment))
-                                .addGap(59, 59, 59)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(showmessage)
-                                    .addComponent(jLabel18)))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel13)))
-                .addContainerGap(189, Short.MAX_VALUE))
+                            .addComponent(showid)
+                            .addComponent(showpayment))))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel12))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel13)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel12))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel13)))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addGap(4, 4, 4)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(showid))
@@ -281,12 +288,8 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
                             .addComponent(showstatus)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(showmessage)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
@@ -366,6 +369,12 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 managependingsnavMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                managependingsnavMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                managependingsnavMouseExited(evt);
+            }
         });
         jPanel5.add(managependingsnav);
         managependingsnav.setBounds(10, 20, 230, 30);
@@ -375,6 +384,12 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         generatereportnav.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 generatereportnavMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                generatereportnavMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                generatereportnavMouseExited(evt);
             }
         });
         jPanel5.add(generatereportnav);
@@ -386,6 +401,12 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 managelotnavMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                managelotnavMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                managelotnavMouseExited(evt);
+            }
         });
         jPanel5.add(managelotnav);
         managelotnav.setBounds(520, 20, 160, 32);
@@ -395,6 +416,12 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         managecustomersnav.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 managecustomersnavMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                managecustomersnavMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                managecustomersnavMouseExited(evt);
             }
         });
         jPanel5.add(managecustomersnav);
@@ -422,6 +449,12 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         backbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backbtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backbtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backbtnMouseExited(evt);
             }
         });
         jPanel5.add(backbtn);
@@ -679,6 +712,57 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         managepurchases.setVisible(true);
     }//GEN-LAST:event_managependingsnavMouseClicked
 
+    private void managependingsnavMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managependingsnavMouseEntered
+        // TODO add your handling code here:
+        managependingsnav.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_managependingsnavMouseEntered
+
+    private void managependingsnavMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managependingsnavMouseExited
+        // TODO add your handling code here:
+        managependingsnav.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_managependingsnavMouseExited
+
+    private void generatereportnavMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generatereportnavMouseEntered
+        // TODO add your handling code here:
+        generatereportnav.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+    }//GEN-LAST:event_generatereportnavMouseEntered
+
+    private void generatereportnavMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generatereportnavMouseExited
+        // TODO add your handling code here:
+        generatereportnav.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_generatereportnavMouseExited
+
+    private void managelotnavMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managelotnavMouseEntered
+        // TODO add your handling code here:
+        managelotnav.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_managelotnavMouseEntered
+
+    private void managelotnavMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managelotnavMouseExited
+        // TODO add your handling code here:
+        managelotnav.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_managelotnavMouseExited
+
+    private void managecustomersnavMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managecustomersnavMouseEntered
+        // TODO add your handling code here:
+        managecustomersnav.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_managecustomersnavMouseEntered
+
+    private void managecustomersnavMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managecustomersnavMouseExited
+        // TODO add your handling code here:
+        managecustomersnav.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_managecustomersnavMouseExited
+
+    private void backbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backbtnMouseEntered
+        // TODO add your handling code here:
+        backbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_backbtnMouseEntered
+
+    private void backbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backbtnMouseExited
+        // TODO add your handling code here:
+        backbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_backbtnMouseExited
+
     public void getLotDetails()
     {
         int blocknum = selectedBuy.getBlockNumber();
@@ -746,6 +830,7 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -760,7 +845,7 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
     private javax.swing.JLabel showid;
     private javax.swing.JLabel showlocation;
     private javax.swing.JLabel showlot;
-    private javax.swing.JLabel showmessage;
+    private javax.swing.JTextArea showmessage;
     private javax.swing.JLabel showname;
     private javax.swing.JLabel showpayment;
     private javax.swing.JLabel showprice;

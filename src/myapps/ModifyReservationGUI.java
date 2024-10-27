@@ -64,8 +64,9 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         showid = new javax.swing.JLabel();
         showstatus = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        showmessage = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        showmessage = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         markreservedbtn = new javax.swing.JButton();
         backtopendingbtn = new javax.swing.JButton();
@@ -220,17 +221,21 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel18.setText("Message:");
         jPanel3.add(jLabel18);
-        jLabel18.setBounds(346, 78, 70, 21);
-
-        showmessage.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        showmessage.setText("<<message>>");
-        jPanel3.add(showmessage);
-        showmessage.setBounds(346, 106, 270, 21);
+        jLabel18.setBounds(350, 50, 70, 21);
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel14.setText("Status:");
         jPanel3.add(jLabel14);
         jLabel14.setBounds(23, 107, 53, 21);
+
+        showmessage.setEditable(false);
+        showmessage.setColumns(20);
+        showmessage.setLineWrap(true);
+        showmessage.setRows(5);
+        jScrollPane1.setViewportView(showmessage);
+
+        jPanel3.add(jScrollPane1);
+        jScrollPane1.setBounds(350, 80, 260, 86);
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -308,6 +313,12 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 managependingsnavMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                managependingsnavMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                managependingsnavMouseExited(evt);
+            }
         });
         jPanel5.add(managependingsnav);
         managependingsnav.setBounds(10, 20, 230, 30);
@@ -317,6 +328,12 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         generatereportnav.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 generatereportnavMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                generatereportnavMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                generatereportnavMouseExited(evt);
             }
         });
         jPanel5.add(generatereportnav);
@@ -328,6 +345,12 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 managelotnavMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                managelotnavMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                managelotnavMouseExited(evt);
+            }
         });
         jPanel5.add(managelotnav);
         managelotnav.setBounds(520, 20, 160, 32);
@@ -337,6 +360,12 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         managecustomersnav.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 managecustomersnavMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                managecustomersnavMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                managecustomersnavMouseExited(evt);
             }
         });
         jPanel5.add(managecustomersnav);
@@ -365,6 +394,12 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backbtnMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backbtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backbtnMouseExited(evt);
+            }
         });
         jPanel5.add(backbtn);
         backbtn.setBounds(1130, 10, 48, 48);
@@ -373,7 +408,6 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(91, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -384,6 +418,7 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(77, 77, 77))
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -534,12 +569,32 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         managepurchases.setVisible(true);
     }//GEN-LAST:event_managependingsnavMouseClicked
 
+    private void managependingsnavMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managependingsnavMouseEntered
+        // TODO add your handling code here:
+        managependingsnav.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_managependingsnavMouseEntered
+
+    private void managependingsnavMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managependingsnavMouseExited
+        // TODO add your handling code here:
+        managependingsnav.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_managependingsnavMouseExited
+
     private void generatereportnavMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generatereportnavMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         ManageReportGUI manage = new ManageReportGUI();
         manage.setVisible(true);
     }//GEN-LAST:event_generatereportnavMouseClicked
+
+    private void generatereportnavMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generatereportnavMouseEntered
+        // TODO add your handling code here:
+        generatereportnav.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_generatereportnavMouseEntered
+
+    private void generatereportnavMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generatereportnavMouseExited
+        // TODO add your handling code here:
+        generatereportnav.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_generatereportnavMouseExited
 
     private void managelotnavMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managelotnavMouseClicked
         // TODO add your handling code here:
@@ -548,6 +603,16 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         managelot.setVisible(true);
     }//GEN-LAST:event_managelotnavMouseClicked
 
+    private void managelotnavMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managelotnavMouseEntered
+        // TODO add your handling code here:
+        managelotnav.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_managelotnavMouseEntered
+
+    private void managelotnavMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managelotnavMouseExited
+        // TODO add your handling code here:
+        managelotnav.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_managelotnavMouseExited
+
     private void managecustomersnavMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managecustomersnavMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
@@ -555,12 +620,32 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         managecustomers.setVisible(true);
     }//GEN-LAST:event_managecustomersnavMouseClicked
 
+    private void managecustomersnavMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managecustomersnavMouseEntered
+        // TODO add your handling code here:
+        managecustomersnav.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_managecustomersnavMouseEntered
+
+    private void managecustomersnavMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managecustomersnavMouseExited
+        // TODO add your handling code here:
+        managecustomersnav.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_managecustomersnavMouseExited
+
     private void backbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backbtnMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         ManagePurchasesGUI managepurchases = new ManagePurchasesGUI();
         managepurchases.setVisible(true);
     }//GEN-LAST:event_backbtnMouseClicked
+
+    private void backbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backbtnMouseEntered
+        // TODO add your handling code here:
+        backbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_backbtnMouseEntered
+
+    private void backbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backbtnMouseExited
+        // TODO add your handling code here:
+        backbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_backbtnMouseExited
 
     
     public void getReservationDetails() {
@@ -630,6 +715,7 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -644,7 +730,7 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
     private javax.swing.JLabel showid;
     private javax.swing.JLabel showlocation;
     private javax.swing.JLabel showlot;
-    private javax.swing.JLabel showmessage;
+    private javax.swing.JTextArea showmessage;
     private javax.swing.JLabel showname;
     private javax.swing.JLabel showprice;
     private javax.swing.JLabel showsize;

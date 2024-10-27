@@ -45,7 +45,6 @@ public class loginPanel extends javax.swing.JFrame {
         registerbutton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1200, 700));
         setMinimumSize(new java.awt.Dimension(1200, 700));
         setResizable(false);
         setSize(new java.awt.Dimension(1200, 700));
@@ -76,7 +75,7 @@ public class loginPanel extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/password.png"))); // NOI18N
         jLabel4.setText(" Password:");
 
-        loginBtn.setBackground(new java.awt.Color(102, 102, 102));
+        loginBtn.setBackground(new java.awt.Color(0, 0, 0));
         loginBtn.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("LOGIN");

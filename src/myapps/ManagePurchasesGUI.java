@@ -173,7 +173,7 @@ public class ManagePurchasesGUI extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -443,7 +443,8 @@ public class ManagePurchasesGUI extends javax.swing.JFrame {
             buy.getContact().toLowerCase().contains(searchQuery) ||              // Contact
             buy.getEmail().toLowerCase().contains(searchQuery) ||                // Email
             buy.getMessage().toLowerCase().contains(searchQuery) ||              // Message
-            buy.getStatus().toLowerCase().contains(searchQuery)) {                // Status
+            buy.getStatus().toLowerCase().contains(searchQuery) ||               // Status
+            (buy.getPaymentMethod() != null && buy.getPaymentMethod().toLowerCase().contains(searchQuery))) { // Payment Method
             // Add matching buys to the table
             model.addRow(new Object[]{
                 buy.getBuyID(),
