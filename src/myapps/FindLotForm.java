@@ -140,20 +140,18 @@ public class FindLotForm extends javax.swing.JFrame {
         String blockNumberStr = blockNumberTf.getText();
         String lotNumberStr = lotNumberTf.getText();
 
-        // Convert blockNumber and lotNumber to integers for comparison
         int blockNumber = Integer.parseInt(blockNumberStr);
         int lotNumber = Integer.parseInt(lotNumberStr);
 
         Lot foundLot = null;
         for (Lot lot : Data.lots) {
-            if (lot.getBlock() == blockNumber && lot.getLotNumber() == lotNumber) { // Use == for int comparison
+            if (lot.getBlock() == blockNumber && lot.getLotNumber() == lotNumber) {
                 foundLot = lot;
                 break;
             }
         }
 
         if (foundLot != null) {
-            // Call the updateTable method in the main GUI to display only the found lot
             mainGUI.updateTableFoundLot(foundLot);
             this.dispose(); // Close the search window
         } else {

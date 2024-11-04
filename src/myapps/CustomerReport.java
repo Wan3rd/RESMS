@@ -261,12 +261,9 @@ public class CustomerReport extends javax.swing.JFrame {
 
     
     private void displayCustomerReport() {
-        // Display total customers
-        // Get the current date in "dd-MM-yyyy" format
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String currentDate = LocalDate.now().format(dateFormatter);
 
-        // Create a formatted string for the report
         StringBuilder report = new StringBuilder();
         report.append("Customers Report\n\n")
           .append("Total Customers: \t").append(customers.size()).append("\n\n")
@@ -279,7 +276,7 @@ public class CustomerReport extends javax.swing.JFrame {
             "Username", "Name", "Gender", "Contact", "Email", "Address"))
               .append("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 
-        // Append each customer's details to the report in table row format
+       
         for (Customer customer : customers) {
             report.append(String.format("%-15s %-25s %-10s %-15s %-30s %-40s\n",
                     customer.getUsername(),

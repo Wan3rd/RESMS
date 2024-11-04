@@ -19,7 +19,6 @@ public class CustomerUI extends javax.swing.JFrame {
     public CustomerUI(String username) {
         initComponents();
         setGreetingMessage(username);
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE); 
         setLocationRelativeTo(null); // Center the form on the screen
         pack(); // Pack the components to their preferred sizes
     }
@@ -43,6 +42,7 @@ public class CustomerUI extends javax.swing.JFrame {
         logoutbtn = new javax.swing.JButton();
         reservebtn = new javax.swing.JButton();
         checkinvoicesbtn = new javax.swing.JButton();
+        greetingUser1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 700));
@@ -56,7 +56,7 @@ public class CustomerUI extends javax.swing.JFrame {
         Welcome.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         greetingUser.setFont(new java.awt.Font("Franklin Gothic Heavy", 1, 48)); // NOI18N
-        greetingUser.setText("Welcome to RESMS!");
+        greetingUser.setText("CasaConnect");
 
         buylotbtn.setBackground(new java.awt.Color(204, 204, 255));
         buylotbtn.setFont(new java.awt.Font("MS Gothic", 1, 24)); // NOI18N
@@ -121,6 +121,9 @@ public class CustomerUI extends javax.swing.JFrame {
             }
         });
 
+        greetingUser1.setFont(new java.awt.Font("Franklin Gothic Heavy", 1, 48)); // NOI18N
+        greetingUser1.setText("Welcome to RESMS!");
+
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
@@ -128,32 +131,34 @@ public class CustomerUI extends javax.swing.JFrame {
             .addGroup(PanelLayout.createSequentialGroup()
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(greetingUser)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2))
                     .addGroup(PanelLayout.createSequentialGroup()
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(129, 129, 129)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addGap(129, 129, 129)
-                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(PanelLayout.createSequentialGroup()
-                                        .addComponent(buylotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(reservebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelLayout.createSequentialGroup()
-                                        .addComponent(viewlotsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(45, 45, 45)
-                                        .addComponent(viewlotsbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(47, 47, 47)
-                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(checkinvoicesbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(logoutbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addGap(346, 346, 346)
-                                .addComponent(greetingUser)))
+                                .addComponent(buylotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(reservebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelLayout.createSequentialGroup()
+                                .addComponent(viewlotsbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addComponent(viewlotsbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(47, 47, 47)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(checkinvoicesbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(logoutbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 124, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelLayout.createSequentialGroup()
+                    .addGap(356, 356, 356)
+                    .addComponent(greetingUser1)
+                    .addContainerGap(368, Short.MAX_VALUE)))
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,10 +166,9 @@ public class CustomerUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
-                .addComponent(greetingUser, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                    .addComponent(Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(greetingUser, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(179, 179, 179)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buylotbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reservebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,6 +183,11 @@ public class CustomerUI extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addComponent(logoutbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(224, Short.MAX_VALUE))
+            .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelLayout.createSequentialGroup()
+                    .addGap(150, 150, 150)
+                    .addComponent(greetingUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(497, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -248,6 +257,7 @@ public class CustomerUI extends javax.swing.JFrame {
     private javax.swing.JButton buylotbtn;
     private javax.swing.JButton checkinvoicesbtn;
     private javax.swing.JLabel greetingUser;
+    private javax.swing.JLabel greetingUser1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton logoutbtn;
     private javax.swing.JButton reservebtn;

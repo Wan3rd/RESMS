@@ -260,10 +260,8 @@ public class BuyLot extends javax.swing.JFrame {
         model.setRowCount(0); // Reset table
 
         if (!Data.lots.isEmpty()) {
-            // Loop through the ArrayList of lots and add only available lots as rows in the table
             for (Lot lot : Data.lots)
             {
-                // Check if the lot is available
                 if ("Available".equalsIgnoreCase(lot.getStatus())) {
                     Object[] rowData =
                     {
@@ -277,7 +275,6 @@ public class BuyLot extends javax.swing.JFrame {
                     model.addRow(rowData); // Add row to table
                 }
             }
-
             // Check if no available lots were added to the table
             if (model.getRowCount() == 0) {
                 JOptionPane.showMessageDialog(this, "No available lots to display.");

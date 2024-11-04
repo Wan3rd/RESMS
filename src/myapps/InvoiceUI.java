@@ -137,7 +137,7 @@ public class InvoiceUI extends javax.swing.JFrame {
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        CustomerUI customerUI = new CustomerUI(username); // Pass the welcome text back to CustomerUI
+        CustomerUI customerUI = new CustomerUI(username); 
         customerUI.setVisible(true);
     }//GEN-LAST:event_backbtnActionPerformed
 
@@ -147,7 +147,6 @@ public class InvoiceUI extends javax.swing.JFrame {
             
             int selectedRow = invoicestable.getSelectedRow();
 
-            // Extract blocknum and lotnum as integers from the selected row
             String documentID = invoicestable.getValueAt(selectedRow, 0).toString();
 
             

@@ -56,42 +56,43 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="greetingUser" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="Welcome" min="-2" pref="202" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="buylotbtn" min="-2" pref="281" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="reservebtn" min="-2" pref="281" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="viewlotsbtn" min="-2" pref="281" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                          <Component id="viewlotsbtn1" min="-2" pref="281" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="checkinvoicesbtn" max="32767" attributes="0"/>
-                                      <Component id="logoutbtn" min="-2" pref="281" max="-2" attributes="0"/>
-                                  </Group>
+                          <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="buylotbtn" min="-2" pref="281" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="reservebtn" min="-2" pref="281" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="346" max="-2" attributes="0"/>
-                                  <Component id="greetingUser" min="-2" max="-2" attributes="0"/>
+                                  <Component id="viewlotsbtn" min="-2" pref="281" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="viewlotsbtn1" min="-2" pref="281" max="-2" attributes="0"/>
                               </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="checkinvoicesbtn" max="32767" attributes="0"/>
+                              <Component id="logoutbtn" min="-2" pref="281" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="124" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="356" max="-2" attributes="0"/>
+                      <Component id="greetingUser1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="368" max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -102,10 +103,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="Welcome" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="greetingUser" min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                  <Component id="greetingUser" min="-2" pref="53" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="buylotbtn" alignment="3" min="-2" pref="99" max="-2" attributes="0"/>
                       <Component id="reservebtn" alignment="3" min="-2" pref="99" max="-2" attributes="0"/>
@@ -126,6 +126,13 @@
                   </Group>
                   <EmptySpace pref="224" max="32767" attributes="0"/>
               </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="greetingUser1" min="-2" pref="53" max="-2" attributes="0"/>
+                      <EmptySpace pref="497" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -144,7 +151,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Franklin Gothic Heavy" size="48" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Welcome to RESMS!"/>
+            <Property name="text" type="java.lang.String" value="CasaConnect"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="buylotbtn">
@@ -258,6 +265,14 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkinvoicesbtnActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="greetingUser1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Franklin Gothic Heavy" size="48" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Welcome to RESMS!"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
