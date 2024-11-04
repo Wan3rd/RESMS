@@ -117,7 +117,7 @@ public class Payment extends javax.swing.JFrame {
             }
         });
         jPanel1.add(backbtn);
-        backbtn.setBounds(40, 590, 165, 57);
+        backbtn.setBounds(40, 590, 165, 55);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/house_payment.png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -131,12 +131,12 @@ public class Payment extends javax.swing.JFrame {
         lotdisplay.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 18)); // NOI18N
         lotdisplay.setText("<<Lot Number>>");
         jPanel1.add(lotdisplay);
-        lotdisplay.setBounds(50, 320, 144, 21);
+        lotdisplay.setBounds(50, 320, 142, 21);
 
         lotdisplay1.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 36)); // NOI18N
         lotdisplay1.setText("Transaction Summary");
         jPanel1.add(lotdisplay1);
-        lotdisplay1.setBounds(376, 43, 365, 41);
+        lotdisplay1.setBounds(376, 43, 364, 41);
 
         jLabel5.setFont(new java.awt.Font("Perpetua", 1, 18)); // NOI18N
         jLabel5.setText("Contact:");
@@ -166,7 +166,7 @@ public class Payment extends javax.swing.JFrame {
         showsize.setText("<<size>>");
         showsize.setToolTipText("");
         jPanel1.add(showsize);
-        showsize.setBounds(500, 270, 150, 20);
+        showsize.setBounds(510, 270, 150, 20);
 
         jLabel8.setFont(new java.awt.Font("Perpetua", 1, 18)); // NOI18N
         jLabel8.setText("Username:");
@@ -209,13 +209,13 @@ public class Payment extends javax.swing.JFrame {
         showlotnumber.setText("<<lotnum>>");
         showlotnumber.setToolTipText("");
         jPanel1.add(showlotnumber);
-        showlotnumber.setBounds(500, 240, 150, 20);
+        showlotnumber.setBounds(510, 240, 150, 20);
 
         showblocknumber.setFont(new java.awt.Font("Perpetua", 0, 18)); // NOI18N
         showblocknumber.setText("<<blocknum>>");
         showblocknumber.setToolTipText("");
         jPanel1.add(showblocknumber);
-        showblocknumber.setBounds(500, 210, 150, 20);
+        showblocknumber.setBounds(510, 210, 150, 20);
 
         jLabel13.setFont(new java.awt.Font("Perpetua", 1, 18)); // NOI18N
         jLabel13.setText("Email:");

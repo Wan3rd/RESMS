@@ -92,7 +92,7 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Customer Information");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(67, 24, 229, 29);
+        jLabel1.setBounds(67, 24, 227, 29);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/profile_logo.png"))); // NOI18N
         jPanel1.add(jLabel9);
@@ -101,32 +101,32 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Name:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(12, 79, 50, 21);
+        jLabel2.setBounds(12, 79, 60, 21);
 
         showname.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         showname.setText("<<name>>");
         jPanel1.add(showname);
-        showname.setBounds(106, 79, 220, 21);
+        showname.setBounds(120, 80, 220, 21);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Email:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(12, 107, 50, 21);
+        jLabel3.setBounds(12, 107, 70, 21);
 
         showemail.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         showemail.setText("<<email>>");
         jPanel1.add(showemail);
-        showemail.setBounds(106, 107, 220, 21);
+        showemail.setBounds(120, 110, 220, 21);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Contact:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(12, 135, 67, 21);
+        jLabel4.setBounds(12, 135, 80, 21);
 
         showcontact.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         showcontact.setText("<<contact>>");
         jPanel1.add(showcontact);
-        showcontact.setBounds(106, 135, 220, 21);
+        showcontact.setBounds(120, 140, 220, 21);
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setLayout(null);
@@ -138,17 +138,17 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel10.setText("Lot Information");
         jPanel2.add(jLabel10);
-        jLabel10.setBounds(72, 23, 165, 29);
+        jLabel10.setBounds(72, 23, 164, 29);
 
         jLabel16.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         jLabel16.setText("Block Number:");
         jPanel2.add(jLabel16);
-        jLabel16.setBounds(12, 79, 152, 29);
+        jLabel16.setBounds(12, 79, 170, 29);
 
         jLabel17.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         jLabel17.setText("Lot Number:");
         jPanel2.add(jLabel17);
-        jLabel17.setBounds(10, 120, 127, 29);
+        jLabel17.setBounds(10, 120, 140, 29);
 
         showblock.setFont(new java.awt.Font("Serif", 0, 22)); // NOI18N
         showblock.setText("1");
@@ -163,7 +163,7 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         jLabel19.setText("Size(sqm):");
         jPanel2.add(jLabel19);
-        jLabel19.setBounds(310, 120, 108, 29);
+        jLabel19.setBounds(310, 120, 120, 29);
 
         showsize.setFont(new java.awt.Font("Serif", 0, 22)); // NOI18N
         showsize.setText("<<size>>");
@@ -173,7 +173,7 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         jLabel20.setText("Price:");
         jPanel2.add(jLabel20);
-        jLabel20.setBounds(310, 80, 59, 29);
+        jLabel20.setBounds(310, 80, 70, 29);
 
         showprice.setFont(new java.awt.Font("Serif", 0, 22)); // NOI18N
         showprice.setText("<<price>>");
@@ -183,12 +183,12 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         jLabel21.setText("Location:");
         jPanel2.add(jLabel21);
-        jLabel21.setBounds(600, 80, 95, 29);
+        jLabel21.setBounds(600, 80, 120, 29);
 
         showlocation.setFont(new java.awt.Font("Serif", 0, 22)); // NOI18N
         showlocation.setText("<<location>>");
         jPanel2.add(showlocation);
-        showlocation.setBounds(710, 80, 190, 29);
+        showlocation.setBounds(720, 80, 190, 29);
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 255));
         jPanel3.setMaximumSize(new java.awt.Dimension(573, 175));
@@ -201,32 +201,32 @@ public class ModifyReservationGUI extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel13.setText("Purchase Information");
         jPanel3.add(jLabel13);
-        jLabel13.setBounds(72, 23, 224, 29);
+        jLabel13.setBounds(72, 23, 220, 29);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Purchase ID:");
         jPanel3.add(jLabel5);
-        jLabel5.setBounds(23, 79, 100, 21);
+        jLabel5.setBounds(23, 79, 110, 21);
 
         showid.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         showid.setText("<<buyid>>");
         jPanel3.add(showid);
-        showid.setBounds(179, 79, 84, 21);
+        showid.setBounds(179, 79, 100, 21);
 
         showstatus.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         showstatus.setText("<<status>>");
         jPanel3.add(showstatus);
-        showstatus.setBounds(179, 107, 85, 21);
+        showstatus.setBounds(179, 107, 100, 21);
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel18.setText("Message:");
         jPanel3.add(jLabel18);
-        jLabel18.setBounds(350, 50, 70, 21);
+        jLabel18.setBounds(350, 50, 90, 21);
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel14.setText("Status:");
         jPanel3.add(jLabel14);
-        jLabel14.setBounds(23, 107, 53, 21);
+        jLabel14.setBounds(23, 107, 70, 21);
 
         showmessage.setEditable(false);
         showmessage.setColumns(20);

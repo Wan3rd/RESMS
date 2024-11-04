@@ -98,7 +98,7 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Customer Information");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(67, 24, 229, 29);
+        jLabel1.setBounds(67, 24, 227, 29);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/profile_logo.png"))); // NOI18N
         jPanel1.add(jLabel9);
@@ -107,32 +107,32 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Name:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(12, 79, 50, 21);
+        jLabel2.setBounds(12, 79, 100, 21);
 
         showname.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         showname.setText("<<name>>");
         jPanel1.add(showname);
-        showname.setBounds(106, 79, 260, 21);
+        showname.setBounds(126, 79, 240, 21);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Email:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(12, 107, 50, 21);
+        jLabel3.setBounds(12, 107, 100, 21);
 
         showemail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         showemail.setText("<<email>>");
         jPanel1.add(showemail);
-        showemail.setBounds(106, 107, 260, 21);
+        showemail.setBounds(126, 107, 240, 21);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Contact:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(12, 135, 67, 21);
+        jLabel4.setBounds(12, 135, 100, 21);
 
         showcontact.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         showcontact.setText("<<contact>>");
         jPanel1.add(showcontact);
-        showcontact.setBounds(106, 135, 270, 21);
+        showcontact.setBounds(126, 135, 250, 21);
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setLayout(null);
@@ -144,17 +144,17 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel10.setText("Lot Information");
         jPanel2.add(jLabel10);
-        jLabel10.setBounds(72, 23, 165, 29);
+        jLabel10.setBounds(72, 23, 164, 29);
 
         jLabel16.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         jLabel16.setText("Block Number:");
         jPanel2.add(jLabel16);
-        jLabel16.setBounds(10, 70, 152, 29);
+        jLabel16.setBounds(10, 70, 170, 29);
 
         jLabel17.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         jLabel17.setText("Lot Number:");
         jPanel2.add(jLabel17);
-        jLabel17.setBounds(10, 110, 127, 29);
+        jLabel17.setBounds(10, 110, 160, 29);
 
         showblock.setFont(new java.awt.Font("Serif", 0, 22)); // NOI18N
         showblock.setText("1");
@@ -169,7 +169,7 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         jLabel19.setText("Size(sqm):");
         jPanel2.add(jLabel19);
-        jLabel19.setBounds(340, 110, 108, 29);
+        jLabel19.setBounds(340, 110, 120, 29);
 
         showsize.setFont(new java.awt.Font("Serif", 0, 22)); // NOI18N
         showsize.setText("<<size>>");
@@ -179,7 +179,7 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         jLabel20.setText("Price:");
         jPanel2.add(jLabel20);
-        jLabel20.setBounds(340, 70, 59, 29);
+        jLabel20.setBounds(340, 70, 80, 29);
 
         showprice.setFont(new java.awt.Font("Serif", 0, 22)); // NOI18N
         showprice.setText("<<price>>");
@@ -189,12 +189,12 @@ public class ModifyPurchaseGUI extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         jLabel21.setText("Location:");
         jPanel2.add(jLabel21);
-        jLabel21.setBounds(620, 70, 95, 29);
+        jLabel21.setBounds(620, 70, 110, 29);
 
         showlocation.setFont(new java.awt.Font("Serif", 0, 22)); // NOI18N
         showlocation.setText("<<location>>");
         jPanel2.add(showlocation);
-        showlocation.setBounds(730, 70, 270, 26);
+        showlocation.setBounds(740, 70, 270, 26);
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 255));
         jPanel3.setMaximumSize(new java.awt.Dimension(573, 175));
