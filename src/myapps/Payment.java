@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 import mylibs.Buy;
+import mylibs.Console;
 
 import mylibs.Data;
 import mylibs.Invoice;
@@ -30,6 +31,7 @@ public class Payment extends javax.swing.JFrame {
     private String username;
     private Invoice selectedInvoice;
     private InvoiceUI invoiceUI;
+    Console console = new Console();
     
     public Payment(String username, Invoice invoice, InvoiceUI invoiceUI) {
         initComponents();
@@ -117,7 +119,7 @@ public class Payment extends javax.swing.JFrame {
             }
         });
         jPanel1.add(backbtn);
-        backbtn.setBounds(40, 590, 165, 57);
+        backbtn.setBounds(40, 590, 165, 55);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/house_payment.png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -131,12 +133,12 @@ public class Payment extends javax.swing.JFrame {
         lotdisplay.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 18)); // NOI18N
         lotdisplay.setText("<<Lot Number>>");
         jPanel1.add(lotdisplay);
-        lotdisplay.setBounds(50, 320, 144, 21);
+        lotdisplay.setBounds(50, 320, 142, 21);
 
         lotdisplay1.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 36)); // NOI18N
         lotdisplay1.setText("Transaction Summary");
         jPanel1.add(lotdisplay1);
-        lotdisplay1.setBounds(376, 43, 365, 41);
+        lotdisplay1.setBounds(376, 43, 364, 41);
 
         jLabel5.setFont(new java.awt.Font("Perpetua", 1, 18)); // NOI18N
         jLabel5.setText("Contact:");
@@ -621,6 +623,7 @@ public class Payment extends javax.swing.JFrame {
 
             if (lotFound) {
                 JOptionPane.showMessageDialog(null, "Receipt created successfully for transaction ID: " + transactionID, "Success", JOptionPane.INFORMATION_MESSAGE);
+                console.transactionsuccess(transactionID);
                 invoiceUI.refreshInvoiceTable(username);
             } else {
                 JOptionPane.showMessageDialog(null, "Lot not found in the system.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -633,6 +636,7 @@ public class Payment extends javax.swing.JFrame {
         }
         catch(Exception e) {
             JOptionPane.showMessageDialog(null, "An error occurred: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            console.transactionfailed();
             e.printStackTrace();
         }
     }//GEN-LAST:event_purchaseButtonActionPerformed

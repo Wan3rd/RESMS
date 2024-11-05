@@ -8,6 +8,8 @@ package mylibs;
  *
  * @author DESKTOP
  */
+
+//extends
 public class Admin extends User {
     private String adminName;
     private String contactNumber;

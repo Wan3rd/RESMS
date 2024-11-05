@@ -332,10 +332,10 @@ public class viewLots extends javax.swing.JFrame {
   
 
     // Call filterLots with the values from fields
-    filterLotsSizePrice(minSizeText, maxSizeText, minPriceText, maxPriceText);
-
-        // Call filterLots with the values from fields
         filterLotsSizePrice(minSizeText, maxSizeText, minPriceText, maxPriceText);
+//
+//        // Call filterLots with the values from fields
+//        filterLotsSizePrice(minSizeText, maxSizeText, minPriceText, maxPriceText);
     }//GEN-LAST:event_searchbtnActionPerformed
 
     
@@ -402,36 +402,48 @@ public class viewLots extends javax.swing.JFrame {
     
     
     private void filterLotsSizePrice(String minSizeText, String maxSizeText, String minPriceText, String maxPriceText) {
-    DefaultTableModel model = (DefaultTableModel) viewlots.getModel();
-    model.setRowCount(0); // Clear the current rows in the table
+        DefaultTableModel model = (DefaultTableModel) viewlots.getModel();
+        model.setRowCount(0); // Clear the current rows in the table
 
-    // Parse size inputs
-    int minSize = minSizeText.isEmpty() ? Integer.MIN_VALUE : Integer.parseInt(minSizeText);
-    int maxSize = maxSizeText.isEmpty() ? Integer.MAX_VALUE : Integer.parseInt(maxSizeText);
+        // Parse size and price inputs with error handling
+        int minSize, maxSize, minPrice, maxPrice;
 
-    // Parse price inputs
-    int minPrice = minPriceText.isEmpty() ? Integer.MIN_VALUE : Integer.parseInt(minPriceText);
-    int maxPrice = maxPriceText.isEmpty() ? Integer.MAX_VALUE : Integer.parseInt(maxPriceText);
+        try {
+            minSize = minSizeText.isEmpty() ? Integer.MIN_VALUE : Integer.parseInt(minSizeText);
+            maxSize = maxSizeText.isEmpty() ? Integer.MAX_VALUE : Integer.parseInt(maxSizeText);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid size input");
+            return; // Exit the method if invalid input is found
+        }
 
-    // Loop through the list of lots and add rows that match the size/price criteria
-    for (Lot lot : Data.lots) {
-        boolean matchesSize = (minSizeText.isEmpty() && maxSizeText.isEmpty()) || isSizeInRange(lot, minSize, maxSize);
-        boolean matchesPrice = (minPriceText.isEmpty() && maxPriceText.isEmpty()) || isPriceInRange(lot, minPrice, maxPrice);
+        try {
+            minPrice = minPriceText.isEmpty() ? Integer.MIN_VALUE : Integer.parseInt(minPriceText);
+            maxPrice = maxPriceText.isEmpty() ? Integer.MAX_VALUE : Integer.parseInt(maxPriceText);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid price input");
+            return; // Exit the method if invalid input is found
+        }
 
-        // Add to the table if it matches either the size or price criteria
-        if (matchesSize || matchesPrice) {
-            Object[] rowData = {
-                lot.getBlock(),     // Block Number
-                lot.getLotNumber(), // Lot Number
-                lot.getSize(),      // Size in sqm
-                lot.getPrice(),     // Price in PHP
-                lot.getStatus(),    // Status
-                lot.getLocation()   // Location
-            };
-            model.addRow(rowData); // Add matching lot to the table
+        // Loop through the list of lots and add rows that match the size and price criteria
+        for (Lot lot : Data.lots) {
+            boolean matchesSize = isSizeInRange(lot, minSize, maxSize);
+            boolean matchesPrice = isPriceInRange(lot, minPrice, maxPrice);
+
+            // Change || to && if you need both conditions to match
+            if (matchesSize && matchesPrice) {
+                Object[] rowData = {
+                    lot.getBlock(),     // Block Number
+                    lot.getLotNumber(), // Lot Number
+                    lot.getSize(),      // Size in sqm
+                    lot.getPrice(),     // Price in PHP
+                    lot.getStatus(),    // Status
+                    lot.getLocation()   // Location
+                };
+                model.addRow(rowData); // Add matching lot to the table
+            }
         }
     }
-}
+
 
 
     // Helper method to check if the lot's size is within the specified range

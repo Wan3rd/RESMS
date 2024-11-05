@@ -20,7 +20,7 @@ import mylibs.Lot;
  */
 public class ManageLotGUI extends javax.swing.JFrame {
     
-    private Lot lot;
+    private Lot lot; // Aggregation
     private ArrayList<Lot> lots;
 
     public ManageLotGUI() {

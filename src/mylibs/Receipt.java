@@ -8,7 +8,7 @@ package mylibs;
  *
  * @author DESKTOP
  */
-public class Receipt extends Document {
+public class Receipt extends Document{
 
     private String transactionID;  // Specific to Receipt
     private String paymentMethod;  // Added paymentMethod

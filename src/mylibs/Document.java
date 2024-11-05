@@ -8,6 +8,8 @@ package mylibs;
  *
  * @author DESKTOP
  */
+
+//Abstract
 public abstract class Document {
     protected String documentID;
     protected String username;    // Customer's username

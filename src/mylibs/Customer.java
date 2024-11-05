@@ -11,6 +11,8 @@ import mylibs.User;
  *
  * @author DESKTOP
  */
+//Polymorphism
+//Inheritance extends
 public class Customer extends User {
     private String customerName;
     private String gender;

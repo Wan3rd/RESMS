@@ -11,6 +11,8 @@ import java.util.ArrayList;
  */
 public class Lot 
 {
+    
+    //Encapsulation
     private int block;
     private int lotNumber;
     private double size;
